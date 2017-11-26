@@ -15,9 +15,10 @@ class CreateAssignationsTable extends Migration {
 		Schema::create('assignations', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->integer('planteurs_id')->index('fk_assignations_planteurs_idx');
-			$table->integer('acheteurs_id')->index('fk_assignations_acheteurs1_idx');
-			$table->primary(['id','planteurs_id','acheteurs_id']);
+			$table->timestamps();
+			$table->softDeletes();
+			$table->integer('acheteurs_id')->index('fk_assignations_acheteurs_idx');
+			$table->integer('planteurs_id')->index('fk_assignations_planteurs1_idx');
 		});
 	}
 
