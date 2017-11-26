@@ -163,6 +163,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Way\Generators\GeneratorsServiceProvider::class,
+        Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -171,11 +173,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Ecooperative\Providers\AppServiceProvider::class,
+        Ecooperative\Providers\AuthServiceProvider::class,
+        // Ecooperative\Providers\BroadcastServiceProvider::class,
+        Ecooperative\Providers\EventServiceProvider::class,
+        Ecooperative\Providers\RouteServiceProvider::class,
 
     ],
 
