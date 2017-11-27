@@ -79,12 +79,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    ecoopérative
+                    Djamo Djamo Dja
                 </div>
 
                 <div class="links">
                     <a href="">Découvrire</a>
-                    <a href="">Activeités</a>
+                    <a href="">Activités</a>
                     <a href="">A propos</a>
                     <a href="">Joindre</a>
                 </div>

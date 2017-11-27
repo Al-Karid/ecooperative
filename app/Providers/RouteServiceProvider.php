@@ -4,7 +4,7 @@ namespace Ecooperative\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-
+use Ecooperative\Planteur as Planteur;
 class RouteServiceProvider extends ServiceProvider
 {
     /**
