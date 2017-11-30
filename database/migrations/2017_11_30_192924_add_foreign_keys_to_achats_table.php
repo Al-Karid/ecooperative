@@ -16,6 +16,7 @@ class AddForeignKeysToAchatsTable extends Migration {
 		{
 			$table->foreign('acheteurs_id', 'fk_achats_acheteurs1')->references('id')->on('acheteurs')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('planteurs_id', 'fk_achats_planteurs1')->references('id')->on('planteurs')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('produits_id', 'fk_achats_produits1')->references('id')->on('produits')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 
@@ -31,6 +32,7 @@ class AddForeignKeysToAchatsTable extends Migration {
 		{
 			$table->dropForeign('fk_achats_acheteurs1');
 			$table->dropForeign('fk_achats_planteurs1');
+			$table->dropForeign('fk_achats_produits1');
 		});
 	}
 

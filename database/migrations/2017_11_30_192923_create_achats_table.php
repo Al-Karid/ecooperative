@@ -14,7 +14,7 @@ class CreateAchatsTable extends Migration {
 	{
 		Schema::create('achats', function(Blueprint $table)
 		{
-			$table->integer('id')->primary();
+			$table->integer('id');
 			$table->string('produit', 45);
 			$table->decimal('poids', 5);
 			$table->integer('montant');
@@ -24,6 +24,8 @@ class CreateAchatsTable extends Migration {
 			$table->softDeletes();
 			$table->integer('acheteurs_id')->index('fk_achats_acheteurs1_idx');
 			$table->integer('planteurs_id')->index('fk_achats_planteurs1_idx');
+			$table->integer('produits_id')->index('fk_achats_produits1_idx');
+			$table->primary(['id','produits_id']);
 		});
 	}
 
