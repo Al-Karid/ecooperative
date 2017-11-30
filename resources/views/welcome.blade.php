@@ -63,6 +63,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            a:hover{
+                color:red!important;
+                animation: linear 0.4;
+            }
         </style>
     </head>
     <body>
@@ -70,7 +75,8 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Accueil</a>
+                        <a href="{{ url('/home') }}" disabled>{{ Auth::user()->name }}</a>
+                        <a href="{{ url('/home') }}">Tableau de bord</a>
                     @else
                         <a href="{{ route('login') }}">Connexion</a>
                         {{--  <a href="{{ route('register') }}">Register</a>  --}}

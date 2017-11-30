@@ -20,3 +20,7 @@ Route::resource('planteurs', 'PlanteursController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/gestion', function () {
+    return view('gestion.index');
+});
