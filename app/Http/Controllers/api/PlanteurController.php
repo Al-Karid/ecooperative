@@ -1,11 +1,14 @@
 <?php
 
-namespace Ecooperative\Http\Controllers;
+namespace Ecooperative\Http\Controllers\api;
 
 use Illuminate\Http\Request;
-use Ecooperative\Planteur;
+use Ecooperative\Http\Controllers\Controller;
 
-class PlanteursController extends Controller
+use Ecooperative\Planteur;
+use Ecooperative\Http\Resources\Planteur as PlanteurResource;
+
+class PlanteurController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +17,7 @@ class PlanteursController extends Controller
      */
     public function index()
     {
-        $planteurs = Planteur::all();
-        // return $planteurs;
-        return view('planteurs.liste', compact('planteurs'));
+        return new PlanteurResource(Planteur::all());
     }
 
     /**
@@ -48,8 +49,7 @@ class PlanteursController extends Controller
      */
     public function show($id)
     {
-        // $planteurs = Planteur::find($id);
-        // return view('planteurs.liste', compact('planteurs'));
+        //
     }
 
     /**
@@ -60,6 +60,7 @@ class PlanteursController extends Controller
      */
     public function edit($id)
     {
+        //
     }
 
     /**
