@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('planteurs', 'PlanteursController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
