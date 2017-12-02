@@ -14,12 +14,12 @@
 
                     <div class="btn-group btn-group-justified">
                         <a href="#" class="btn btn-default">
-                            <span class="glyphicon glyphicon-" aria-hidden="true">Assignation</span>
+                            <span class="glyphicon glyphicon-" aria-hidden="true">Assignations</span>
                         </a>
                         <a href="#" class="btn btn-default">
                             <span class="glyphicon glyphicon-" aria-hidden="true">Membres</span>
                         </a>
-                        <a href="/gestion" class="btn btn-default">
+                        <a href="/gestion/p1" class="btn btn-default">
                             <span class="glyphicon glyphicon-" aria-hidden="true">Gestion</span>
                         </a>
                     </div>

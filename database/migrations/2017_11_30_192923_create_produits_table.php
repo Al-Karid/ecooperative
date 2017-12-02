@@ -17,6 +17,8 @@ class CreateProduitsTable extends Migration {
 			$table->integer('id', true);
 			$table->string('libelle', 45);
 			$table->integer('prix');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

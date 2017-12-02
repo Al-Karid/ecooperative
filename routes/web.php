@@ -17,10 +17,17 @@ Route::get('/', function () {
 
 Route::resource('planteurs', 'PlanteursController');
 
+Route::resource('produits', 'ProduitController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/gestion', function () {
-    return view('gestion.index');
-});
+Route::get('/gestion/{p}', function ($p) {
+    if($p=='p1')
+        return view('gestion.index',["p"=>"p1"]);
+    elseif($p=='p2')
+        return view('gestion.index',["p"=>"p2"]);
+    elseif($p=='a')
+        return view('gestion.index',["p"=>"a"]);  
+})->middleware('auth');
