@@ -3,15 +3,10 @@
 namespace Ecooperative\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Ecooperative\Planteur;
+use Ecooperative\Acheteur;
 
-class PlanteursController extends Controller
+class AcheteursController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +14,7 @@ class PlanteursController extends Controller
      */
     public function index()
     {
-        $planteurs = Planteur::all();
-        // return $planteurs;
-        return view('planteurs.liste', compact('planteurs'));
+        //
     }
 
     /**
@@ -44,11 +37,11 @@ class PlanteursController extends Controller
     {
         $request->validate([
             'nomc'=>'required|string',
-            'tel'=>'required|numeric|unique:planteurs',
-            'localite'=>'string|required',
+            'tel'=>'required|numeric|unique:acheteurs',
+            'email'=>'email|unique:acheteurs',
         ]);
-        Planteur::create($request->all());
-        return redirect('/gestion/p2')->with('status', 'Planteur enregistré avec succès');
+        Acheteur::create($request->all());
+        return redirect('/gestion/a')->with('status', 'Acheteur enregistré avec succès');
     }
 
     /**
@@ -59,8 +52,7 @@ class PlanteursController extends Controller
      */
     public function show($id)
     {
-        // $planteurs = Planteur::find($id);
-        // return view('planteurs.liste', compact('planteurs'));
+        //
     }
 
     /**
@@ -71,6 +63,7 @@ class PlanteursController extends Controller
      */
     public function edit($id)
     {
+        //
     }
 
     /**

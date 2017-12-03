@@ -6,11 +6,6 @@
                 <div class="panel-heading">Tableau de bord</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                    @endif
 
                     <h3 style="margin:0px">Gestion</h3>
                     <hr style="margin-top:10px" />
@@ -25,7 +20,8 @@
                     <h4>Ajouter un nouveau
                         <span style="color:blue">produit</span>
                     </h4>
-                    <hr/> @if ($errors->any())
+                    <hr/> 
+                    @if ($errors->any())
                     <div class="alert alert-warning">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -33,76 +29,107 @@
                             @endforeach
                         </ul>
                     </div>
+                    @endif 
                     @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
-                    @endif @endif {{--
-                    <form action="/produits" method="post"> --}} {!! Form::open(['url' => '/produits', 'method' => 'post']) !!}
+                    @endif
+                    {!! Form::open(['url' => '/produits', 'method' => 'post']) !!}
                         <div class="row">
                             <div class="form-group col col-md-12">
-                                {{ Form::label('nom du produits') }} {{ Form::text('libelle',null, ['class'=>'form-control', 'placeholder'=>'ex. Cacao'])
-                                }} {{--
-                                <input type="text" class="form-control" id="name"
-                                    placeholder="nom du produit" required> --}}
+                                {{ Form::label('nom du produits') }} 
+                                {{ Form::text('libelle',null, ['class'=>'form-control', 'placeholder'=>'ex. Cacao'])}} 
                             </div>
                             <div class="form-group col col-md-12">
-                                {{ Form::label('prix unitaire (FCFA)') }} {{ Form::text('prixu',null, ['class'=>'form-control', 'placeholder'=>'ex. 775'])
-                                }} {{--
-                                <input type="number" class="form-control" id="unit"
-                                    placeholder="prix unitaire" required> --}}
+                                {{ Form::label('prix unitaire') }} 
+                                {{ Form::text('prixu',null, ['class'=>'form-control', 'placeholder'=>'ex. 725'])}} 
                             </div>
                             <div class="form-group col col-md-3 pull-right">
                                 <input type="submit" class="btn btn-default pull-right" value="Enregistrer">
                             </div>
                         </div>
-                        {!! Form::close() !!} {{-- </form> --}} @elseif($p=="a")
+                    {!! Form::close() !!}
+                    @elseif($p=="a")
 
                     <hr/>
-                    <h4>Ajouter un nouveau
+                    @if ($errors->any())
+                    <div class="alert alert-warning">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif 
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                    @endif
+                    <h4>Ajouter un nouvel
                         <span style="color:blue">acheteur</span>
                     </h4>
                     <hr/>
-                    <form action="" method="post">
+                    {!! Form::open(['url' => '/acheteurs', 'method' => 'post']) !!}
                         <div class="row">
                             <div class="form-group col col-md-12">
-                                <input type="text" class="form-control" id="" placeholder="nom complet" required>
+                                {{ Form::label('nom complet') }} 
+                                {{ Form::text('nomc',null, ['class'=>'form-control', 'placeholder'=>'ex. Kouassi Josef'])}} 
                             </div>
                             <div class="form-group col col-md-12">
-                                <input type="tel" class="form-control" id="" placeholder="telephone" required>
+                                {{ Form::label('téléphone') }} 
+                                {{ Form::text('tel',null, ['class'=>'form-control', 'placeholder'=>'ex. 41235695'])}} 
                             </div>
                             <div class="form-group col col-md-12">
-                                <input type="email" class="form-control" id="" placeholder="email">
+                                {{ Form::label('email') }} 
+                                {{ Form::email('email',null, ['class'=>'form-control', 'placeholder'=>'ex. uncompte@domaine.com'])}} 
                             </div>
                             <div class="form-group col col-md-3 pull-right">
                                 <input type="submit" class="btn btn-default pull-right" value="Enregistrer">
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                     @elseif($p=="p2")
                     <hr/>
+                    @if ($errors->any())
+                    <div class="alert alert-warning">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif 
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                     <h4>Ajouter un nouveau
                         <span style="color:blue">planteur</span>
                     </h4>
                     <hr/>
-                    <form action="" method="post">
+                    {!! Form::open(['url' => '/planteurs', 'method' => 'post']) !!}
                         <div class="row">
                             <div class="form-group col col-md-12">
-                                <input type="text" class="form-control" id="" placeholder="nom complet" required>
+                                {{ Form::label('nom complet') }} 
+                                {{ Form::text('nomc',null, ['class'=>'form-control', 'placeholder'=>'ex. Kouassi Josef'])}} 
                             </div>
                             <div class="form-group col col-md-12">
-                                <input type="tel" class="form-control" id="" placeholder="telephone" required>
+                                {{ Form::label('téléphone') }} 
+                                {{ Form::text('tel',null, ['class'=>'form-control', 'placeholder'=>'ex. 41235695'])}} 
                             </div>
                             <div class="form-group col col-md-12">
-                                <input type="text" class="form-control" id="" placeholder="localite">
+                                {{ Form::label('localite') }} 
+                                {{ Form::text('localite',null, ['class'=>'form-control', 'placeholder'=>'ex. N\'Douci'])}} 
                             </div>
                             <div class="form-group col col-md-3 pull-right">
                                 <input type="submit" class="btn btn-default pull-right" value="Enregistrer">
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                     @endif
-
                 </div>
             </div>
         </div>

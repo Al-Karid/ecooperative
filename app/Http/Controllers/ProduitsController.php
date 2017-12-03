@@ -5,7 +5,7 @@ namespace Ecooperative\Http\Controllers;
 use Illuminate\Http\Request;
 use Ecooperative\Produit;
 
-class ProduitController extends Controller
+class ProduitsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,7 +41,6 @@ class ProduitController extends Controller
                 'prixu' => 'required|numeric'
             ]
         );
-
         Produit::create($request->all());
         return redirect('/gestion/p1')->with('status', 'Produit créé avec succes');
     }

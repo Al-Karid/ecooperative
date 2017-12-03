@@ -11,15 +11,17 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::resource('planteurs', 'PlanteursController');
 
-Route::resource('produits', 'ProduitController');
+Route::resource('produits', 'ProduitsController');
 
-Auth::routes();
+Route::resource('acheteurs', 'AcheteursController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

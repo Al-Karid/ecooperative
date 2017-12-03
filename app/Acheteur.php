@@ -8,26 +8,26 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $nomc
  * @property string $tel
- * @property string $localite
+ * @property string $email
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
  * @property Achat[] $achats
  * @property Assignation[] $assignations
  */
-class Planteur extends Model
+class Acheteur extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['nomc', 'tel', 'localite', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['nomc', 'tel', 'email', 'created_at', 'updated_at', 'deleted_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function achats()
     {
-        return $this->hasMany('Ecooperative\Achat', 'planteurs_id');
+        return $this->hasMany('Ecooperative\Achat', 'acheteurs_id');
     }
 
     /**
@@ -35,6 +35,6 @@ class Planteur extends Model
      */
     public function assignations()
     {
-        return $this->hasMany('Ecooperative\Assignation', 'planteurs_id');
+        return $this->hasMany('Ecooperative\Assignation', 'acheteurs_id');
     }
 }

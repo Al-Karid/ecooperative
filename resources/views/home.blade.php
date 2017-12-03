@@ -6,11 +6,6 @@
                 <div class="panel-heading">Tableau de bord</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                    @endif
 
                     <div class="btn-group btn-group-justified">
                         <a href="#" class="btn btn-default">
