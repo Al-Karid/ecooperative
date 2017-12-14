@@ -4,6 +4,7 @@ namespace Ecooperative\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Ecooperative\Produit;
+use Ecooperative\Http\Resources\Produit as ProduitResource;
 
 class ProduitsController extends Controller
 {
@@ -14,7 +15,7 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-        //
+        return new ProduitResource(Produit::all());
     }
 
     /**

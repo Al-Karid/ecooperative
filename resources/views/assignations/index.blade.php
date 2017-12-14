@@ -9,28 +9,23 @@
 
                     <div class="btn-group btn-group-justified">
                         <a href="/assignations" class="btn btn-default">
-                            <span class="glyphicon glyphicon-" aria-hidden="true">Assignations</span>
+                            <span class="glyphicon glyphicon-" aria-hidden="true">Liste</span>
                         </a>
-                        <a href="/membres" class="btn btn-default">
-                            <span class="glyphicon glyphicon-" aria-hidden="true">Membres</span>
-                        </a>
-                        <a href="/gestion/p1" class="btn btn-default">
-                            <span class="glyphicon glyphicon-" aria-hidden="true">Gestion</span>
+                        <a href="/assignations/create" class="btn btn-default">
+                            <span class="glyphicon glyphicon-" aria-hidden="true">Ajouter</span>
                         </a>
                     </div>
 
-                    <h3>Vue d'ensemble</h3>
+                    <h3>Liste des assignations</h3>
                     <hr/>
-
-                    <h6>Ventes recentes</h6>
-                    <div class="list-group" style="margin-bottom:0px!important">
-                        <a href="#" class="list-group-item">vide</a>
-                        {{--  <a href="#" class="list-group-item">Item 2</a>  --}}
-                        {{--  <a href="#" class="list-group-item">Item 3</a>  --}}
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
                     </div>
-                    <h6>Assignations recentes</h6>
+                    @endif
+
                     <div class="list-group" style="margin-bottom:0px!important">
-                        @foreach($assignationss->slice(1,2) as $item)
+                        @foreach($assignationss as $item)
                         <a href="#" class="list-group-item">
                             <span style="color:red">Planteur    :</span>
                         {{ $item['planteurs_id']['nomc']}} 
@@ -39,6 +34,7 @@
                         {{  $item['acheteurs_id']['nomc']  }}
                         </a>  
                         @endforeach
+                        
                     </div>
 
                 </div>

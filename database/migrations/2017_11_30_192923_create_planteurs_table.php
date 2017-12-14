@@ -16,7 +16,7 @@ class CreatePlanteursTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('nom', 45);
-			$table->string('prenom', 45);
+			$table->string('localite', 45);
 			$table->string('tel', 45)->unique('tel_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes();

@@ -4,7 +4,7 @@ namespace Ecooperative\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class Planteur extends Resource
+class Produit extends Resource
 {
     /**
      * Transform the resource into an array.

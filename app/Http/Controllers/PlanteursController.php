@@ -20,8 +20,8 @@ class PlanteursController extends Controller
     public function index()
     {
         $planteurs = Planteur::all();
-        // return $planteurs;
-        return view('planteurs.liste', compact('planteurs'));
+        return $planteurs;
+        // return view('planteurs.liste', compact('planteurs'));
     }
 
     /**
@@ -43,7 +43,7 @@ class PlanteursController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nomc'=>'required|string',
+            'nom'=>'required|string',
             'tel'=>'required|numeric|unique:planteurs',
             'localite'=>'string|required',
         ]);

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $id
- * @property string $nomc
+ * @property string $nom
  * @property string $tel
  * @property string $localite
  * @property string $created_at
@@ -20,7 +20,7 @@ class Planteur extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nomc', 'tel', 'localite', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['nom', 'tel', 'localite', 'created_at', 'updated_at', 'deleted_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

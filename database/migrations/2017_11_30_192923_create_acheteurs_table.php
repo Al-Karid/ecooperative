@@ -16,7 +16,7 @@ class CreateAcheteursTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('nom', 45);
-			$table->string('prenom', 45);
+			// $table->string('prenom', 45);
 			$table->string('tel', 45)->unique('tel_UNIQUE');
 			$table->string('email', 45)->nullable()->unique('email_UNIQUE');
 			$table->timestamps();

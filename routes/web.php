@@ -23,6 +23,8 @@ Route::resource('produits', 'ProduitsController');
 
 Route::resource('acheteurs', 'AcheteursController');
 
+Route::resource('assignations', 'AssignationsController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/gestion/{p}', function ($p) {

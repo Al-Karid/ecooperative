@@ -75,7 +75,7 @@
                         <div class="row">
                             <div class="form-group col col-md-12">
                                 {{ Form::label('nom complet') }} 
-                                {{ Form::text('nomc',null, ['class'=>'form-control', 'placeholder'=>'ex. Kouassi Josef'])}} 
+                                {{ Form::text('nom',null, ['class'=>'form-control', 'placeholder'=>'ex. Kouassi Josef'])}} 
                             </div>
                             <div class="form-group col col-md-12">
                                 {{ Form::label('téléphone') }} 
@@ -114,7 +114,7 @@
                         <div class="row">
                             <div class="form-group col col-md-12">
                                 {{ Form::label('nom complet') }} 
-                                {{ Form::text('nomc',null, ['class'=>'form-control', 'placeholder'=>'ex. Kouassi Josef'])}} 
+                                {{ Form::text('nom',null, ['class'=>'form-control', 'placeholder'=>'ex. Kouassi Josef'])}} 
                             </div>
                             <div class="form-group col col-md-12">
                                 {{ Form::label('téléphone') }} 

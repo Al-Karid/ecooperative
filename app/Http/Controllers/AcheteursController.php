@@ -24,7 +24,7 @@ class AcheteursController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,7 +36,7 @@ class AcheteursController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nomc'=>'required|string',
+            'nom'=>'required|string',
             'tel'=>'required|numeric|unique:acheteurs',
             'email'=>'email|unique:acheteurs',
         ]);
