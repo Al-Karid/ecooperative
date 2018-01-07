@@ -28,11 +28,11 @@ class AssignationsController extends Controller
             array_pull($assignations, 'planteurs_id');
             array_pull($assignations, 'acheteurs_id');
             array_add($assignations,'planteurs_id',$planteur);
-            // array_add($assignations,'acheteurs_id',$acheteur);
+            array_add($assignations,'acheteurs_id',$acheteur);
         }
-        return new AssignationResource($assignationss);
+        // return new AssignationResource($assignationss);
         // return compact('assignationss');
-        // return view('assignations.index', ['assignationss'=>$assignationss]);
+        return view('assignations.index', ['assignationss'=>$assignationss]);
     }
 
     /**
@@ -42,10 +42,10 @@ class AssignationsController extends Controller
      */
     public function create()
     {
-        $planteurs = Planteur::All('id','nomc');
-        $acheteurs = Acheteur::All('id','nomc');
-        $planteurs = array_pluck($planteurs, 'nomc','id');
-        $acheteurs = array_pluck($acheteurs, 'nomc','id');
+        $planteurs = Planteur::All('id','nom');
+        $acheteurs = Acheteur::All('id','nom');
+        $planteurs = array_pluck($planteurs, 'nom','id');
+        $acheteurs = array_pluck($acheteurs, 'nom','id');
         // $planteurs = compact('planteurs');
         // $acheteurs = compact('acheterus');
         return view('assignations.create', ['planteurs'=>$planteurs,'acheteurs'=>$acheteurs]);

@@ -28,10 +28,10 @@
                         @foreach($assignationss as $item)
                         <a href="#" class="list-group-item">
                             <span style="color:red">Planteur    :</span>
-                        {{ $item['planteurs_id']['nomc']}} 
+                        {{ $item['planteurs_id']['nom']}} 
                             <span class="pull-right"><i>{{  $item['created_at']  }}</i></span>
                             <br><span style="color:red">Acheteur:</span>
-                        {{  $item['acheteurs_id']['nomc']  }}
+                        {{  $item['acheteurs_id']['nom']  }}
                         </a>  
                         @endforeach
                         

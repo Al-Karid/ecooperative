@@ -39,11 +39,11 @@
                         <div class="row">
                             <div class="form-group col col-md-12">
                                 {{ Form::label('nom du produits') }} 
-                                {{ Form::text('libelle',null, ['class'=>'form-control', 'placeholder'=>'ex. Cacao'])}} 
+                                {{ Form::text('libelle',null, ['class'=>'form-control product', 'placeholder'=>'ex. Cacao'])}} 
                             </div>
                             <div class="form-group col col-md-12">
                                 {{ Form::label('prix unitaire') }} 
-                                {{ Form::text('prixu',null, ['class'=>'form-control', 'placeholder'=>'ex. 725'])}} 
+                                {{ Form::text('prixu',null, ['class'=>'form-control prod_price', 'placeholder'=>'ex. 725'])}} 
                             </div>
                             <div class="form-group col col-md-3 pull-right">
                                 <input type="submit" class="btn btn-default pull-right" value="Enregistrer">

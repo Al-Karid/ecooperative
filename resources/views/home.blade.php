@@ -30,13 +30,13 @@
                     </div>
                     <h6>Assignations recentes</h6>
                     <div class="list-group" style="margin-bottom:0px!important">
-                        @foreach($assignationss->slice(1,2) as $item)
+                        @foreach($assignationss->slice(1,3) as $item)
                         <a href="#" class="list-group-item">
                             <span style="color:red">Planteur    :</span>
-                        {{ $item['planteurs_id']['nomc']}} 
+                        {{ $item['planteurs_id']['nom']}} 
                             <span class="pull-right"><i>{{  $item['created_at']  }}</i></span>
                             <br><span style="color:red">Acheteur:</span>
-                        {{  $item['acheteurs_id']['nomc']  }}
+                        {{  $item['acheteurs_id']['nom']  }}
                         </a>  
                         @endforeach
                     </div>
