@@ -75,11 +75,11 @@
                         <div class="row">
                             <div class="form-group col col-md-12">
                                 {{ Form::label('nom complet') }} 
-                                {{ Form::text('nom',null, ['class'=>'form-control', 'placeholder'=>'ex. Kouassi Josef'])}} 
+                                {{ Form::text('nom',null, ['class'=>'form-control fullname', 'placeholder'=>'ex. Kouassi Josef'])}} 
                             </div>
                             <div class="form-group col col-md-12">
                                 {{ Form::label('téléphone') }} 
-                                {{ Form::text('tel',null, ['class'=>'form-control', 'placeholder'=>'ex. 41235695'])}} 
+                                {{ Form::text('tel',null, ['class'=>'form-control tel', 'placeholder'=>'ex. 41235695'])}} 
                             </div>
                             <div class="form-group col col-md-12">
                                 {{ Form::label('email') }} 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Ecooperative\Planteur;
 use Ecooperative\Acheteur;
 use Ecooperative\Assignation;
+use Ecooperative\Http\Resources\Assignation as AssignationResource;
 
 class AssignationsController extends Controller
 {
@@ -18,7 +19,8 @@ class AssignationsController extends Controller
     {
         $assignationss = Assignation::all('planteurs_id','acheteurs_id','id', 'created_at');
         $assignationss = collect($assignationss);
-        $assignationss = $assignationss->sortByDesc('created_at');
+        // $assignationss = $assignationss->sortByDesc('created_at');
+        // return $assignationss;
         foreach($assignationss as $assignations)
         {
             $planteur = Planteur::find($assignations->planteurs_id);
@@ -26,9 +28,9 @@ class AssignationsController extends Controller
             array_pull($assignations, 'planteurs_id');
             array_pull($assignations, 'acheteurs_id');
             array_add($assignations,'planteurs_id',$planteur);
-            array_add($assignations,'acheteurs_id',$acheteur);
+            // array_add($assignations,'acheteurs_id',$acheteur);
         }
-        return $assignationss;
+        return new AssignationResource($assignationss);
         // return compact('assignationss');
         // return view('assignations.index', ['assignationss'=>$assignationss]);
     }

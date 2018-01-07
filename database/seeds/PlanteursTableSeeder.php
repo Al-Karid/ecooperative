@@ -33,8 +33,8 @@ class PlanteursTableSeeder extends Seeder
         {
             Planteur::create([
                 'nom' => $faker->name,
-                'tel' => $faker->phoneNumber,
-                'localite' => 'Divo'
+                'tel' => $faker->randomNumber,
+                'localite' => $faker->city
             ]);
         }
     }
